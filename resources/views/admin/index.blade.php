@@ -25,7 +25,7 @@
         <tbody>
             @foreach ($projects as $project)
             <tr>
-                <th scope="row">{{ $project['id']}}</th>
+                <th scope="row">{{ $project->id}}</th>
                 <td>
                     @if($project->cover_image)
                     <img width="140" class="img-fluid" src="{{asset('storage/' . $project->cover_image)}}" alt="">
@@ -33,9 +33,9 @@
                     <div class="placeholder p-5 bg-secondary d-flex align-items-center justify-content-center" style="width:140px">Placeholder</div>
                     @endif
                 </td>
-                <td>{{ $project['title'] }}</td>
-                <td>{{ $project['description'] }}</td>
-                <td>{{ $project['date']}}</td>
+                <td>{{ $project->title }}</td>
+                <td>{{ $project->description }}</td>
+                <td>{{ $project->date}}</td>
                 <td>
                     <div class="d-flex flex-column">
                         <div>
@@ -59,6 +59,8 @@
 
         </tbody>
     </table>
+
+    <div class="row">{{ $projects->links()}}</div>
 </div>
 
 @endsection
